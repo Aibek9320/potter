@@ -5,6 +5,7 @@
 .image{
     width: 200px;
     height: 280px;
+    object-fit: cover;
 }
 .wrapper{
     display: grid;
@@ -16,4 +17,10 @@
 }
 .house{
     font-style: italic;
+}
+.gif{
+    display: block;
+}
+.disable{
+    display: none;
 }

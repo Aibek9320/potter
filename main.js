@@ -5,11 +5,12 @@ document.body.appendChild(btn)
 const wrapper = document.createElement('div')
 wrapper.setAttribute('class', 'wrapper')
 document.body.appendChild(wrapper)
+const gif = document.createElement('img')
 const loader = () => {
-    const gif = document.createElement('img')
     gif.setAttribute('class', 'gif')
     gif.setAttribute('src', 'https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921')
     document.body.appendChild(gif)
+    setTimeout(getHeroes, 2000)
 }
 const getHeroes = async () => {
     const data = await fetch('https://hp-api.onrender.com/api/characters')
@@ -39,7 +40,10 @@ const getHeroes = async () => {
         card.appendChild(addBirth)
         wrapper.appendChild(card)
         btn.removeEventListener('click', getHeroes)
+        
     }
+    gif.setAttribute('class', 'disable')
     console.log(dataWithImgs);
+    
 }
-btn.addEventListener('click', ,setTimeout(getHeroes, 3000))
+btn.addEventListener('click', loader)
